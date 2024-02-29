@@ -4,3 +4,16 @@ class CuentaCorriente:
     #Atributos
     ---------------------------------------------------------"""
     saldo = 0
+
+    def ConsultarSaldo(self):
+        return self.saldo
+
+    def ConsignarValor(self, valor):
+        #Aquí va el código del método
+        nSaldo = self.saldo + valor
+        return nSaldo
+    
+    def RetirarValor(self, valor):
+        #Aquí va el código del método
+        nSaldo = self.saldo - valor
+        return nSaldo

@@ -23,31 +23,21 @@ class SimuladorBancario:
     """---------------------------------------------------------
     # METODOS
     ---------------------------------------------------------"""
-
-    def ConsignarValor(valor):
-        #Aquí va el código del método
-        return valor
-    
-    def RetirarValor(self):
-        #Aquí va el código del método
-        return 0
     
     def DarInteresMensual(self):
         #Aquí va el código del método
         return 0
     
     def ConsignarCuentaCorriente(self, valorConsignacion):
-        #self.cuentaCorriente.saldo += valorConsignacion
-        self.cuentaCorriente.saldo += self.ConsignarValor(valorConsignacion)
-        return "Usted ha consignado: " + valorConsignacion
+        self.cuentaCorriente.ConsignarValor(valorConsignacion)
     
     def CalcularSaldoTotal(self):
         saldoTotal = self.cuentaAhorros.saldo + self.cuentaCorriente.saldo
         return "El saldo total es de: " + saldoTotal
     
     def TransferirSaldoAhorrosaCorriente(self):
-        self.cuentaCorriente.saldo += self.cuentaAhorros.saldo
-        self.cuentaAhorros.saldo = 0
+        self.cuentaCorriente.ConsignarValor(CuentaAhorros.ConsultarSaldo())
+        self.cuentaAhorros.RetirarValor(CuentaAhorros.ConsultarSaldo())
         return "El saldo de la cuenta de ahorros ha sido transferido a la cuenta corriente."
 
     def ConsultarSaldoCorriente(self):
@@ -55,11 +45,14 @@ class SimuladorBancario:
         return "El saldo de la cuenta corriente es de: " + saldo
 
     def RetirarTodoCuentaCorriente(self):
-        return 0
+        total = self.CalcularSaldoTotal()
+        self.cuentaCorriente.RetirarValor(self.cuentaCorriente.ConsultarSaldo())
+        self.cuentaAhorros.RetirarValor(self.cuentaAhorros.ConsultarSaldo())
+        return "Retiraste total: " + total
 
     def DuplicarAhorro(self):
-        nuevoAhorro = self.cuentaAhorros.saldo * 2
-        return "El nuevo saldo de la cuenta de ahorros es de: " + nuevoAhorro
+        self.cuentaAhorros.ConsignarValor(self.cuentaAhorros.ConsultarSaldo())
+        return "El nuevo saldo de la cuenta de ahorros es de: " + self.cuentaAhorros.ConsultarSaldo()
 
 
     
