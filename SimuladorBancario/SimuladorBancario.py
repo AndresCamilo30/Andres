@@ -50,6 +50,17 @@ class SimuladorBancario:
         self.cuentaAhorros.saldo = 0
         return "El saldo de la cuenta de ahorros ha sido transferido a la cuenta corriente."
 
+    def ConsultarSaldoCorriente(self):
+        saldo = self.cuentaCorriente.saldo
+        return "El saldo de la cuenta corriente es de: " + saldo
+
+    def RetirarTodoCuentaCorriente(self):
+        return 0
+
+    def DuplicarAhorro(self):
+        nuevoAhorro = self.cuentaAhorros.saldo * 2
+        return "El nuevo saldo de la cuenta de ahorros es de: " + nuevoAhorro
+
 
     
     #Crear asociaciones y crear dentro de la clase simulador bancario crear los metodos: ConsignarCuentaCorriente, 
