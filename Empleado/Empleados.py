@@ -6,6 +6,8 @@ class Empleado:
     # Atributos ---------------------"""
     nombre=""
     apellido=""
+    #1er Punto
+    nHijos = 0
     """---------------------------------
     # 1 = Masculino 2 = Femenino ---"""
     sexo=0 
@@ -85,3 +87,51 @@ class Empleado:
         # Forma 2
         #return self.CalcularSalarioAnual() * 0.195
 
+
+    """--------------------------------------------------
+    #SOLUCION TALLER
+    -----------------------------------------------------"""
+    
+    #2do Punto
+    def ConsultarNumeroDeHijos(self):
+        return self.nHijos
+
+
+    #3er Punto
+    def CalcularAuxilioEducativo(self):
+        salarioEmpleado = self.salario
+        numeroDeHijos = self.ConsultarNumeroDeHijos()
+        porcentaje = (salarioEmpleado * 5) / 100
+        auxilioEducativo = porcentaje * numeroDeHijos
+        return auxilioEducativo
+
+    #4to Punto
+    def CalcularAuxilioEducativo(self, porcentaje):
+        salarioEmpleado = self.salario
+        numeroDeHijos = self.ConsultarNumeroDeHijos()
+        porcent = (salarioEmpleado * porcentaje) / 100
+        auxilioEducativo = porcent * numeroDeHijos
+        return auxilioEducativo
+
+    #5to Punto
+    def CalcularDiferenciaSalarial(self, salario2):
+        diferenciaSalarial = self.salario - salario2
+        return "La diferencia salarial con respecto al otro empleado es de: $" + diferenciaSalarial
+
+    #6to Punto
+
+    """
+    En el curso he aprendido varios conceptos nuevos, entre los cuales están
+    1. Clases y objetos
+    2. Métodos y para qué sirve
+    3. Atributos
+    4. Asociaciones
+    5. Requerimiento funcional
+    6. Mundo del problema
+    7. Requerimientos no funcionales
+
+    Una dificultad que se me presentó al principio fué que los conceptos eran muy abstractos, 
+    y se me complicaba un poco entenderlos, pero con algo de práctica y estudio esos conceptos se fueron
+    reforzando.
+
+    """

@@ -12,6 +12,9 @@ class SimuladorBancario:
     nombre = ""
     mesActual = 0
 
+    #1er Punto
+    tipoCliente = ""
+
     """---------------------------------------------------------
     # Asociaciones
     ---------------------------------------------------------"""
@@ -23,6 +26,11 @@ class SimuladorBancario:
     """---------------------------------------------------------
     # METODOS
     ---------------------------------------------------------"""
+
+    def __init__(self, tipoCliente):
+        #Iniciamos el tipo de cliente según el valor recibido por parametro
+        self.tipoCliente = tipoCliente
+
     
     def DarInteresMensual(self):
         #Aquí va el código del método
@@ -56,8 +64,13 @@ class SimuladorBancario:
 
 
     
-    #Crear asociaciones y crear dentro de la clase simulador bancario crear los metodos: ConsignarCuentaCorriente, 
-    #CalcularSaldoTotal, Pasar saldo de ahorro a corriente
+"""----------------------------------------------
+    SOLUCION TALLER
+------------------------------------------------"""
 
-    #Tarea
-    #crear metodos Consultar Saldo Corriente, Retirar Todo Cuenta Corriente, Duplicar Ahorro
+    #3er Punto
+
+    def CambiarTipoCliente(self, nTipoCliente):
+        self.tipoCliente = nTipoCliente
+        return "El tipo de cliente cambió a: " + nTipoCliente
+

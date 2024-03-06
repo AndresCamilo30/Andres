@@ -15,5 +15,6 @@ class CuentaCorriente:
     
     def RetirarValor(self, valor):
         #Aquí va el código del método
-        nSaldo = self.saldo - valor
+        descuento = valor * 0.01
+        nSaldo = self.saldo - (valor + descuento)
         return nSaldo
